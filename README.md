@@ -34,3 +34,34 @@
 - PostgreSQL
 - SQLAlchemy (ORM)
 - Pydantic (Validation)
+
+## API 실행 예시
+
+### 게시글 생성
+```bash
+curl -X POST http://localhost:8000/posts \\
+  -H "Content-Type: application/json" \\
+  -d '{"title": "제목", "content": "내용"}'
+```
+
+### 게시글 목록 조회
+```bash
+curl http://localhost:8000/posts
+```
+
+### 게시글 단건 조회
+```bash
+curl http://localhost:8000/posts/1
+```
+
+### 게시글 수정
+```bash
+curl -X PATCH http://localhost:8000/posts/1 \\
+  -H "Content-Type: application/json" \\
+  -d '{"title": "수정된 제목"}'
+```
+
+### 게시글 삭제
+```bash
+curl -X DELETE http://localhost:8000/posts/1
+```
